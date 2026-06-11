@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche Spendenaktion - Dein Beitrag zählt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🏎️ Porsche Spendenaktion</div>
+            <ul class="nav-links">
+                <li><a href="#ziel">Ziel</a></li>
+                <li><a href="#fortschritt">Fortschritt</a></li>
+                <li><a href="#spenden">Spenden</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Gemeinsam für einen Traum</h1>
+            <p>Hilf uns, einen Porsche für unsere Spendenaktion zu sammeln</p>
+            <a href="#spenden" class="cta-button">Jetzt Spenden</a>
+        </div>
+    </section>
+
+    <!-- Goal Section -->
+    <section class="goal" id="ziel">
+        <div class="container">
+            <h2>Unser Ziel</h2>
+            <div class="goal-content">
+                <p>Wir sammeln Spenden für einen einzigartigen Zweck: einen Porsche zu erwerben. Jeder Franken bringt uns unserem Traum näher!</p>
+                <div class="goal-stats">
+                    <div class="stat">
+                        <div class="stat-number">CHF 150'000</div>
+                        <div class="stat-label">Gesamtziel</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">CHF 47'325</div>
+                        <div class="stat-label">Bereits gesammelt</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">31.5%</div>
+                        <div class="stat-label">Fortschritt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="progress-section" id="fortschritt">
+        <div class="container">
+            <h2>Fortschritt</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 31.5%;"></div>
+            </div>
+            <p class="progress-text">CHF 47'325 von CHF 150'000 gesammelt</p>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation" id="spenden">
+        <div class="container">
+            <h2>Jetzt Spenden</h2>
+            <p class="donation-subtitle">Wähle einen Spendenbetrag oder gib einen eigenen Betrag ein</p>
+            
+            <div class="donation-options">
+                <button class="donation-btn" onclick="selectAmount(50)">CHF 50</button>
+                <button class="donation-btn" onclick="selectAmount(100)">CHF 100</button>
+                <button class="donation-btn" onclick="selectAmount(250)">CHF 250</button>
+                <button class="donation-btn" onclick="selectAmount(500)">CHF 500</button>
+            </div>
+
+            <div class="custom-donation">
+                <input type="number" id="customAmount" placeholder="Eigener Betrag (CHF)" min="1" step="1">
+                <button class="submit-btn" onclick="submitDonation()">Spende verarbeiten</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-methods">
+        <div class="container">
+            <h2>Zahlungsmöglichkeiten</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">💳</div>
+                    <h3>Kreditkarte</h3>
+                    <p>Visa, Mastercard, American Express</p>
+                    <a href="https://stripe.com" class="method-link">Zur Zahlung →</a>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🏦</div>
+                    <h3>Banküberweisung</h3>
+                    <p>IBAN: CH93 0076 2011 6238 5295 7</p>
+                    <p class="bank-note">Referenz: PORSCHE-2026</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📱</div>
+                    <h3>Twint</h3>
+                    <p>Schnell und einfach per App</p>
+                    <a href="https://www.twint.ch" class="method-link">TWINT öffnen →</a>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">💰</div>
+                    <h3>PayPal</h3>
+                    <p>Sicher online spenden</p>
+                    <a href="https://www.paypal.com" class="method-link">Zu PayPal →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donors Section -->
+    <section class="donors">
+        <div class="container">
+            <h2>Unsere Spender</h2>
+            <div class="donors-list">
+                <div class="donor-card">
+                    <div class="donor-avatar">👤</div>
+                    <div class="donor-info">
+                        <p class="donor-name">Max Müller</p>
+                        <p class="donor-amount">CHF 500</p>
+                        <p class="donor-message">"Großartiges Projekt!"</p>
+                    </div>
+                </div>
+                <div class="donor-card">
+                    <div class="donor-avatar">👤</div>
+                    <div class="donor-info">
+                        <p class="donor-name">Anna Schmidt</p>
+                        <p class="donor-amount">CHF 250</p>
+                        <p class="donor-message">"Viel Erfolg!"</p>
+                    </div>
+                </div>
+                <div class="donor-card">
+                    <div class="donor-avatar">👤</div>
+                    <div class="donor-info">
+                        <p class="donor-name">Peter Keller</p>
+                        <p class="donor-amount">CHF 1'000</p>
+                        <p class="donor-message">"Immer dabei!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong>Email:</strong> info@spende-porsche.ch</p>
+                    <p><strong>Telefon:</strong> +41 44 123 4567</p>
+                    <p><strong>Adresse:</strong> Schweiz</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Dein Name" required>
+                    <input type="email" placeholder="Deine E-Mail" required>
+                    <textarea placeholder="Deine Nachricht" rows="5"></textarea>
+                    <button type="submit" class="submit-btn">Nachricht senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Porsche Spendenaktion. Alle Rechte vorbehalten.</p>
+            <p>Datenschutz | Impressum | Nutzungsbedingungen</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
