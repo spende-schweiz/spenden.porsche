@@ -1,6 +1,35 @@
 // Global variable to store selected amount
 let selectedAmount = null;
 
+// Open modal
+function openModal() {
+    document.getElementById('carModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close modal
+function closeModal() {
+    document.getElementById('carModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('carModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        document.getElementById('carModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
 // Select donation amount
 function selectAmount(amount) {
     selectedAmount = amount;
@@ -49,33 +78,19 @@ document.addEventListener('DOMContentLoaded', function() {
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        const href = this.getAttribute('href');
+        if (href !== '#' && !href.includes('modal')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     });
 });
-
-// Progress bar animation on scroll
-function animateProgressBar() {
-    const progressFill = document.querySelector('.progress-fill');
-    const progressSection = document.querySelector('.progress-section');
-    
-    if (!progressSection) return;
-    
-    const sectionTop = progressSection.offsetTop;
-    const scrollTop = window.pageYOffset;
-    
-    if (scrollTop + window.innerHeight > sectionTop) {
-        progressFill.style.width = '31.5%';
-    }
-}
-
-window.addEventListener('scroll', animateProgressBar);
 
 // Donation tracking (local storage)
 function saveDonationToHistory(amount, method) {
